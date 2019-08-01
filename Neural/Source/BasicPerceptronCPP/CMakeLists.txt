@@ -5,18 +5,18 @@ file(
     source_list
     RELATIVE
     "${CMAKE_CURRENT_SOURCE_DIR}"
-    "BasicPerceptron_C/Include/*"
-    "BasicPerceptron_C/Source/*"
+    "BasicPerceptronCPP/Include/*"
+    "BasicPerceptronCPP/Source/*"
 )
 
-add_executable( BasicPerceptron_C ${source_list} )
+add_executable( BasicPerceptronCPP ${source_list} )
 
 target_include_directories(
-    BasicPerceptron_C
+    BasicPerceptronCPP
     PUBLIC
-    "BasicPerceptron_C/Include/"
+    "BasicPerceptronCPP/Include/"
     PRIVATE
-    "BasicPerceptron_C/Source/"
+    "BasicPerceptronCPP/Source/"
 )
 
 # For MSVC parse pretty filter names

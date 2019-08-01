@@ -125,13 +125,15 @@ endif()
 
 #--------------------------------------------
 # Add projects
-include(${CMAKE_CURRENT_SOURCE_DIR}/BasicPerceptron/CMakeLists.txt)
-include(${CMAKE_CURRENT_SOURCE_DIR}/PerceptronLogicGates/CMakeLists.txt)
-include(${CMAKE_CURRENT_SOURCE_DIR}/BasicPerceptron_C/CMakeLists.txt)
+include(${CMAKE_CURRENT_SOURCE_DIR}/NeuralFrameworkC/CMakeLists.txt)
+include(${CMAKE_CURRENT_SOURCE_DIR}/NeuralFrameworkCPP/CMakeLists.txt)
+include(${CMAKE_CURRENT_SOURCE_DIR}/BasicPerceptronC/CMakeLists.txt)
+include(${CMAKE_CURRENT_SOURCE_DIR}/BasicPerceptronCPP/CMakeLists.txt)
+include(${CMAKE_CURRENT_SOURCE_DIR}/NeuralFrameworkTestC/CMakeLists.txt)
 
 if( ${NEURAL_BUILD_TESTS} )
     if( ${NEURAL_BUILD_GUIS} )
     endif()
 endif()
 
-set_property( DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT BasicPerceptron )
+set_property( DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT NeuralFrameworkC )

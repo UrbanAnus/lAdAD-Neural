@@ -5,18 +5,20 @@ file(
     source_list
     RELATIVE
     "${CMAKE_CURRENT_SOURCE_DIR}"
-    "PerceptronLogicGates/Include/*"
-    "PerceptronLogicGates/Source/*"
+    "NeuralFrameworkCPP/Include/*"
+    "NeuralFrameworkCPP/Source/*"
 )
 
-add_executable( PerceptronLogicGates ${source_list} )
+add_library( NeuralFrameworkCPP ${source_list} )
+
+target_compile_definitions(NeuralFrameworkCPP PUBLIC UNICODE)
 
 target_include_directories(
-    PerceptronLogicGates
+    NeuralFrameworkCPP
     PUBLIC
-    "PerceptronLogicGates/Include/"
+    "NeuralFrameworkCPP/Include/"
     PRIVATE
-    "PerceptronLogicGates/Source/"
+    "NeuralFrameworkCPP/Source/"
 )
 
 # For MSVC parse pretty filter names

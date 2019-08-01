@@ -28,6 +28,7 @@ int BasicPerceptronGetBias( FBasicPerceptron* iPtr );
 void BasicPerceptronSetWeight( FBasicPerceptron* iPtr, int iIndex, int iValue );
 int BasicPerceptronGetWeight( FBasicPerceptron* iPtr, int iIndex );
 int BasicPerceptronGetSize( FBasicPerceptron* iPtr );
+int BasicPerceptronCompute( FBasicPerceptron* iPtr, FIntArray* iInput );
 
 #endif // BASICPERCEPTRON_H
 

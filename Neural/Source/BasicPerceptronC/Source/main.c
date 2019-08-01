@@ -17,13 +17,14 @@ int main()
     FBasicPerceptron* microPerceptron = CreateBasicPerceptron( 2 );
     BasicPerceptronSetBias( microPerceptron, -3 );
     BasicPerceptronSetWeight( microPerceptron, 0, 2 );
-    BasicPerceptronSetWeight( microPerceptron, 0, 2 );
+    BasicPerceptronSetWeight( microPerceptron, 1, 2 );
     FIntArray* inputs = CreateIntArray( 2 );
     inputs->data[0] = 1;
     inputs->data[1] = 0;
     int result = BasicPerceptronCompute( microPerceptron, inputs );
     DestroyBasicPerceptron( &microPerceptron );
-    printf( "%i", result );
+    DestroyIntArray( &inputs );
+    printf( "%i\n", result );
 
     return  0;
 }
