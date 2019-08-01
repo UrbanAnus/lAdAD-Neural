@@ -36,7 +36,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Create global solution
-project( Neural CXX )
+project( Neural )
 
 #--------------------------------------------
 # Flags for Compiler / Platforms
@@ -127,6 +127,7 @@ endif()
 # Add projects
 include(${CMAKE_CURRENT_SOURCE_DIR}/BasicPerceptron/CMakeLists.txt)
 include(${CMAKE_CURRENT_SOURCE_DIR}/PerceptronLogicGates/CMakeLists.txt)
+include(${CMAKE_CURRENT_SOURCE_DIR}/BasicPerceptron_C/CMakeLists.txt)
 
 if( ${NEURAL_BUILD_TESTS} )
     if( ${NEURAL_BUILD_GUIS} )
