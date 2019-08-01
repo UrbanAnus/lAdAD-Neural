@@ -202,7 +202,7 @@ FloatArrayRealloc( FFloatArray* iPtr, int iCapacity )
     FFloatArray old = *iPtr;
     int new_memspan = sizeof( float ) * iCapacity;
     int old_memspan = sizeof( float ) * old.__capacity;
-    int min_memspan = min( new_memspan, old_memspan );
+    int min_memspan = new_memspan < old_memspan ? new_memspan : old_memspan;
     iPtr->__capacity = iCapacity;
     if( (int)iPtr->__size > iCapacity )
         iPtr->__size = iCapacity;
@@ -245,7 +245,8 @@ FloatArrayPopBack( FFloatArray* iPtr )
     if( iPtr->__size <= 0 )
         return;
 
-    int new_size = max( iPtr->__size - 1, 0 );
+    int new_size = iPtr->__size - 1;
+    new_size = new_size > 0 ? new_size : 0;
     iPtr->__data[ new_size ] = 0;
     iPtr->__size = new_size;
 }
