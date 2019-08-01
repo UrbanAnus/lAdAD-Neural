@@ -15,6 +15,8 @@ int main()
 {
     FIntArray   int_arr     = CreateIntArray();
     FFloatArray float_arr   = CreateFloatArray();
+    IntArrayRealloc( &int_arr, 20 );
+    FloatArrayRealloc( &float_arr, 20 );
 
     for( int i = 0; i < 20; ++i )
     {

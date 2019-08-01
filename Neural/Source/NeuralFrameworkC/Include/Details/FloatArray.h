@@ -47,6 +47,8 @@ void  FloatArrayRealloc( FFloatArray* iPtr, int iCapacity );
 void  FloatArrayPushBack( FFloatArray* iPtr, float iValue );
 void  FloatArrayPopBack( FFloatArray* iPtr );
 void  FloatArraySanitize( FFloatArray* iPtr );
+FFloatArray* FloatArrayCopy( FFloatArray* iSrc );
+
 
 #endif // FLOATARRAY_H
 

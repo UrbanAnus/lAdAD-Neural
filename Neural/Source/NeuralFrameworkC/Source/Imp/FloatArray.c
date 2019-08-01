@@ -259,3 +259,13 @@ FloatArraySanitize( FFloatArray* iPtr )
 
     FloatArrayRealloc( iPtr, iPtr->__size );
 }
+
+
+FFloatArray*
+FloatArrayCopy( FFloatArray* iSrc )
+{
+    FFloatArray* ret = XCreateFloatArrayWithSize( iSrc->__size );
+    memcpy( ret, iSrc, ret->__size * sizeof( float ) );
+    return  ret;
+}
+

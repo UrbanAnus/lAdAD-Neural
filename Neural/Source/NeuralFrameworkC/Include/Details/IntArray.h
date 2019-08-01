@@ -47,6 +47,8 @@ void  IntArrayRealloc( FIntArray* iPtr, int iCapacity );
 void  IntArrayPushBack( FIntArray* iPtr, int iValue );
 void  IntArrayPopBack( FIntArray* iPtr );
 void  IntArraySanitize( FIntArray* iPtr );
+FIntArray*  IntArrayCopy( FIntArray* iSrc );
+
 
 #endif // INTARRAY_H
 

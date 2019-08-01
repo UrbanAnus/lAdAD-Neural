@@ -259,3 +259,13 @@ IntArraySanitize( FIntArray* iPtr )
 
     IntArrayRealloc( iPtr, iPtr->__size );
 }
+
+
+FIntArray*
+IntArrayCopy( FIntArray* iSrc )
+{
+    FIntArray* ret = XCreateIntArrayWithSize( iSrc->__size );
+    memcpy( ret, iSrc, ret->__size * sizeof( int ) );
+    return  ret;
+}
+

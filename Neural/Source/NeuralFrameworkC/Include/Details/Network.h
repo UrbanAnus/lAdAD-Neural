@@ -27,7 +27,7 @@ typedef struct
 
 /////////////////////////////////////////////////////
 // FNetwork funks
-FNetwork  CreateNetwork( FIntArray iSizes );
+FNetwork  CreateNetwork( FIntArray* iSizes );
 
 
 #endif // NETWORK_H
