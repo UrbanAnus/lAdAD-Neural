@@ -8,6 +8,7 @@
 * Please refer to LICENSE.md
 */
 
+#include <cstring>
 #include <assert.h>
 #include <vector>
 #include <iostream>
