@@ -29,14 +29,14 @@
 /////////////////////////////////////////////////////
 // TArray funks
 #define NEURAL_TArrayFunctionsForwardDeclaration( iType, iName )        \
-    iName  Create ## iName ## ();                                       \
+    iName  Create ## iName ();                                          \
     iName  Create ## iName ## WithSize( int iSize );                    \
     iName  Create ## iName ## WithData( iType* iData, int iSize );      \
-    void  Destroy ## iName ## ( iName* iPtr );                          \
-    iName*  XCreate ## iName ## ();                                     \
+    void  Destroy ## iName ( iName* iPtr );                             \
+    iName*  XCreate ## iName ();                                        \
     iName*  XCreate ## iName ## WithSize( int iSize );                  \
     iName*  XCreate ## iName ## WithData( iType* iData, int iSize );    \
-    void  XDestroy ## iName ## ( iName** iPtr2Ptr );                    \
+    void  XDestroy ## iName ( iName** iPtr2Ptr );                       \
     int   iName ## GetSize( iName* iPtr );                              \
     int   iName ## GetCapacity( iName* iPtr );                          \
     iType iName ## GetElement( iName* iPtr, int iIndex );               \
@@ -51,7 +51,7 @@
 
 #define NEURAL_TArrayFunctionsImplementation( iType, iName )                                                    \
     iName                                                                                                       \
-    Create ## iName ## ()                                                                                       \
+    Create ## iName ()                                                                                          \
     {                                                                                                           \
         iName ret;                                                                                              \
         ret.__size      = 0;                                                                                    \
@@ -66,7 +66,7 @@
     Create ## iName ## WithSize( int iSize )                                                                    \
     {                                                                                                           \
         if( iSize <= 0 )                                                                                        \
-            return  Create ## iName ## ();                                                                      \
+            return  Create ## iName ();                                                                         \
                                                                                                                 \
         iName ret;                                                                                              \
         int memspan     = sizeof( iType ) * iSize;                                                              \
@@ -95,7 +95,7 @@
                                                                                                                 \
                                                                                                                 \
     void                                                                                                        \
-    Destroy ## iName ## ( iName* iPtr )                                                                         \
+    Destroy ## iName ( iName* iPtr )                                                                            \
     {                                                                                                           \
         if( iPtr == NULL )                                                                                      \
             return;                                                                                             \
@@ -108,7 +108,7 @@
                                                                                                                 \
                                                                                                                 \
     iName*                                                                                                      \
-    XCreate ## iName ## ()                                                                                      \
+    XCreate ## iName ()                                                                                         \
     {                                                                                                           \
         iName* ret = malloc( sizeof( iName ) );                                                                 \
         ret->__size      = 0;                                                                                   \
@@ -123,7 +123,7 @@
     XCreate ## iName ## WithSize( int iSize )                                                                   \
     {                                                                                                           \
         if( iSize < 0 )                                                                                         \
-            return  XCreate ## iName ## ();                                                                     \
+            return  XCreate ## iName ();                                                                        \
                                                                                                                 \
         iName* ret = malloc( sizeof( iName ) );                                                                 \
         int memspan     = sizeof( iType ) * iSize;                                                              \
@@ -152,12 +152,12 @@
                                                                                                                 \
                                                                                                                 \
     void                                                                                                        \
-    XDestroy ## iName ## ( iName** iPtr2Ptr )                                                                   \
+    XDestroy ## iName ( iName** iPtr2Ptr )                                                                      \
     {                                                                                                           \
         if( iPtr2Ptr == NULL )                                                                                  \
             return;                                                                                             \
                                                                                                                 \
-        Destroy ## iName ## ( *iPtr2Ptr );                                                                      \
+        Destroy ## iName ( *iPtr2Ptr );                                                                         \
                                                                                                                 \
         iPtr2Ptr = NULL;                                                                                        \
     }                                                                                                           \
@@ -216,7 +216,7 @@
             return;                                                                                             \
                                                                                                                 \
         if( iSize >= (int)iPtr->__capacity )                                                                    \
-             ## iName ## Realloc( iPtr, iSize );                                                                \
+             iName ## Realloc( iPtr, iSize );                                                                \
                                                                                                                 \
         iPtr->__size = iSize;                                                                                   \
     }                                                                                                           \
