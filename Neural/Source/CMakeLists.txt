@@ -52,7 +52,7 @@ elseif( "${NEURAL_EXPLICIT_COMPILER_ID}" STREQUAL "GCC" )
         SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
     # Specific flags for MinGW GCC
     elseif( "${NEURAL_EXPLICIT_HOST_ID}" STREQUAL "WIN" )
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse4.1 -Wa")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse4.1 -W")
     endif()
 
     # Support for alternat drop-in replacement of ld linker with Clang's lld, only for recent GCC ( not 7.3.0 shipped with Qt )
