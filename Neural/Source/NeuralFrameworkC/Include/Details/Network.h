@@ -11,8 +11,7 @@
 */
 
 #include <stdint.h>
-#include "Details/IntArray.h"
-#include "Details/FloatArray.h"
+#include "Details/Arrays.h"
 
 /////////////////////////////////////////////////////
 // FNetwork struct
